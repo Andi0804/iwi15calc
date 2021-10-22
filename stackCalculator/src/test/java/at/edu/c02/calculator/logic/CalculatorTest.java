@@ -83,12 +83,21 @@ public class CalculatorTest {
 			assertEquals("Division by zero", e.getMessage());
 			// e.getCause()
 		}
-
 	}
 	@Test
 	public void testModulo() throws Exception {
 		Calculator calc = new CalculatorImpl();
 		calc.push(6);
+		calc.push(2);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(0, result, 0);
+	}
+
+	@Test
+	public void testModuloZero() throws Exception {
+		Calculator calc = new CalculatorImpl();
+		calc.push(0);
 		calc.push(2);
 		double result = calc.perform(Operation.mod);
 
