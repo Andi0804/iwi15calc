@@ -27,7 +27,10 @@ public class CalculatorImpl implements Calculator {
 				throw new CalculatorException("Division by zero");
 			return c;
 		case mod:
-			return a%b;
+			if(b==0)return a;
+			else if(a==0)return b;
+			else
+				return a%b;
 		case mul:
 			return a * b;
 		}
