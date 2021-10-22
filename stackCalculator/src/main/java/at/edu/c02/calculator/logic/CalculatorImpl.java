@@ -28,7 +28,7 @@ public class CalculatorImpl implements Calculator {
 			return c;
 		case mod:
 			if(b==0)return a;
-			else if(a==0)return b;
+			else if(a==0)return a;
 			else
 				return a%b;
 		case mul:
