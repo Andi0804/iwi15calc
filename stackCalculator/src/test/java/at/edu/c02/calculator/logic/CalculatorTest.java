@@ -103,4 +103,24 @@ public class CalculatorTest {
 
 		assertEquals(0, result, 0);
 	}
+
+	@Test
+	public void testModulo0() throws Exception {
+		Calculator calc = new CalculatorImpl();
+		calc.push(0);
+		calc.push(2);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(0, result, 0);
+	}
+
+	@Test
+	public void testModulo1() throws Exception {
+		Calculator calc = new CalculatorImpl();
+		calc.push(2);
+		calc.push(0);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(2, result, 0);
+	}
 }
